@@ -26,6 +26,7 @@ for rx in range(1,sh1.nrows):
   data = sh1.row(rx)
   phrase = data[2].value
   bopomofo = data[6].value
+  bopomofo = bopomofo.replace(u'\u3000',u' ')
   if checkPhrase(phrase) and checkBopomofo(bopomofo):  
     json+="{\n\"bopomofo\":\""+bopomofo.encode('utf-8')+"\",\n"
     json+="\"phrase\":\""+phrase.encode('utf-8')+"\"\n},\n"
@@ -33,6 +34,7 @@ for rx in range(1,sh2.nrows):
   data = sh2.row(rx)
   phrase = data[2].value
   bopomofo = data[6].value
+  bopomofo = bopomofo.replace(u'\u3000',u' ')
   if checkPhrase(phrase) and checkBopomofo(bopomofo):
     json+="{\n\"bopomofo\":\""+bopomofo.encode('utf-8')+"\",\n"
     json+="\"phrase\":\""+phrase.encode('utf-8')+"\"\n},\n"
@@ -40,6 +42,7 @@ for rx in range(1,sh3.nrows):
   data = sh3.row(rx)
   phrase = data[2].value
   bopomofo = data[6].value
+  bopomofo = bopomofo.replace(u'\u3000',u' ')
   if checkPhrase(phrase) and checkBopomofo(bopomofo):
     json+="{\n\"bopomofo\":\""+bopomofo.encode('utf-8')+"\",\n"
     json+="\"phrase\":\""+phrase.encode('utf-8')+"\"\n},\n"
